@@ -6,6 +6,12 @@ export default function Home() {
       <div className="p-8 rounded-lg shadow-lg max-w-sm w-full text-center bg-zinc-800">
         sup
       </div>
+      <div className="p-8 rounded-lg shadow-lg max-w-sm w-full text-center bg-zinc-800">
+        sup?
+      </div>
+      <div className="p-8 rounded-lg shadow-lg max-w-sm w-full text-center bg-zinc-800">
+        sup.
+      </div>
     </div>
   );
 }
