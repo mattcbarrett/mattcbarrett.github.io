@@ -16,7 +16,7 @@ export default function Home() {
           <div className="flex flex-col w-3/5 space-y-4 items-center justify-start min-h-screen ">
             <div className="p-8 space-y-4 rounded-lg shadow-lg w-full bg-zinc-800">
               <div className="flex justify-between">
-                <div className="text-lg">
+                <div className="text-xl">
                   Title
                 </div>
                 <div className="text-sm">
@@ -33,7 +33,7 @@ export default function Home() {
             </div>
             <div className="p-8 space-y-4 rounded-lg shadow-lg w-full bg-zinc-800">
               <div className="flex justify-between">
-                <div className="text-lg">
+                <div className="text-xl">
                   Title
                 </div>
                 <div className="text-sm">
@@ -49,7 +49,7 @@ export default function Home() {
             </div>
             <div className="p-8 space-y-4 rounded-lg shadow-lg w-full bg-zinc-800">
               <div className="flex justify-between">
-                <div className="text-lg">
+                <div className="text-xl">
                   Title
                 </div>
                 <div className="text-sm">
