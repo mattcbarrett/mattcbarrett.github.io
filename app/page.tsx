@@ -3,19 +3,19 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-    {/* <div className="flex min-h-8 justify-center bg-zinc-900">
+    <div className="flex min-h-12 justify-center items-center bg-zinc-900">
       <div className="w-4/5 space-x-4 space-y-4 text-center">
         <Link href={"/home"}>Home</Link>
         <Link href={"/projects"}>Projects</Link>
         <Link href={"/blog"}>Blog</Link>
       </div>
-    </div> */}
+    </div>
     <div className="flex space-x-8 items-center justify-center bg-zinc-900">
       <div className="w-4/5 mx-auto">
-        <div className="flex items-center space-x-8 justify-center">
+        <div className="flex space-x-8 justify-center">
           <div className="flex flex-col w-3/5 space-y-4 items-center justify-start min-h-screen ">
             <div className="p-8 space-y-4 rounded-lg shadow-lg w-full bg-zinc-800">
-              <div className="flex justify-between">
+              <div className="flex justify-between"> 
                 <div className="text-xl">
                   Title
                 </div>
@@ -64,7 +64,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-1/5 space-y-4 items-center justify-start min-h-screen ">
+          <div className="flex flex-col w-1/5 items-center justify-start">
             <div className="p-8 rounded-lg shadow-lg w-full text-left bg-zinc-800">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
