@@ -72,6 +72,8 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <div className="min-h-8 bg-zinc-900">
+    </div>
     </>
   );
 }
