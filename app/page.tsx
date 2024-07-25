@@ -20,7 +20,7 @@ export default function Home() {
                 <div className="text-xl">
                   Title
                 </div>
-                <div className="text-sm">
+                <div className="text-sm self-center">
                   7/12/2024
                 </div>
               </div>
@@ -37,7 +37,7 @@ export default function Home() {
                 <div className="text-xl">
                   Title
                 </div>
-                <div className="text-sm">
+                <div className="text-sm self-center">
                   7/12/2024
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function Home() {
                 <div className="text-xl">
                   Title
                 </div>
-                <div className="text-sm">
+                <div className="text-sm self-center">
                   7/12/2024
                 </div>
               </div>
@@ -69,13 +69,12 @@ export default function Home() {
             <div className="p-8 space-y-2 rounded-lg shadow-lg w-full text-left bg-zinc-800">
               <p className="mb-4">Thoughts on information security, code & automation, and other myriad interests of mine.</p>
               <div className="flex space-x-2">
-                <FaGithub className="mt-1"/><a href="https://github.com/mattcbarrett">Github</a>
+                <FaGithub className="self-center"/><a href="https://github.com/mattcbarrett">GitHub</a>
               </div>
               <div className="flex space-x-2">
-                <FaLinkedin className="mt-1"/><a href="#">LinkedIn</a>
+                <FaLinkedin className="self-center"/><a href="https://www.linkedin.com/in/matt-barrett-7bb48815b/">LinkedIn</a>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
