@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 export default function Home() {
   return (
@@ -65,9 +66,16 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col w-1/5 items-center justify-start">
-            <div className="p-8 rounded-lg shadow-lg w-full text-left bg-zinc-800">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div className="p-8 space-y-2 rounded-lg shadow-lg w-full text-left bg-zinc-800">
+              <p className="mb-4">Thoughts on information security, code & automation, and other myriad interests of mine.</p>
+              <div className="flex space-x-2">
+                <FaGithub className="mt-1"/><a href="https://github.com/mattcbarrett">Github</a>
+              </div>
+              <div className="flex space-x-2">
+                <FaLinkedin className="mt-1"/><a href="#">LinkedIn</a>
+              </div>
             </div>
+            
           </div>
         </div>
       </div>
