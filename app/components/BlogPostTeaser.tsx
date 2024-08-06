@@ -8,7 +8,7 @@ type Props = {
 
 const BlogPostTeaser = (props: Props) => {
   const { post } = props
-  const teaser = post.content.substring(0,150) + "..." //ellipsis so the post's content trails off
+  const teaser = post.content.substring(0,350) + "..." //ellipsis so the post's content trails off
 
   return (
     <>
