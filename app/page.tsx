@@ -13,7 +13,7 @@ export default function Home() {
         <div className="flex space-x-8 justify-center">
           <div className="flex flex-col w-3/5 space-y-4 items-center justify-start min-h-screen">
             {posts.map((post) => (
-              <BlogPostTeaser post={post} />
+              <BlogPostTeaser post={post} key={post.slug} />
             ))}
           </div>
           <Sidebar />
