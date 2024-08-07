@@ -26,6 +26,7 @@ export default function RootLayout({
           </div>
         </div>
         {children}
+        <div className="min-h-8 bg-zinc-900" />
       </body>
     </html>
   );
