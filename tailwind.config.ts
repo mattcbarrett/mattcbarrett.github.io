@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography"
+import { PluginUtils } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -8,6 +10,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      typography: ({ theme }: PluginUtils) => ({}),
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +18,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    typography
+  ],
 };
 export default config;

@@ -23,12 +23,12 @@ const BlogPostTeaser = (props: Props) => {
                 {post.date}
               </div>
             </div>
-            <div className="text-justify p-x-4">
-              <Markdown>{teaser}</Markdown>
+            <div className="p-x-4">
+              <Markdown className="prose text-left max-w-fit text-white">{teaser}</Markdown>
             </div>
-            <div className="text-right text-sm">
+            {/* <div className="text-right text-sm">
               -{post.author}
-            </div>
+            </div> */}
           </Link>
         </div>
       }
