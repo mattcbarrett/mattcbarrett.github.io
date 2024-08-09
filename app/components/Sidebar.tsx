@@ -4,7 +4,7 @@ type Props = {}
 
 const Sidebar = (props: Props) => {
   return (
-    <div className="flex flex-col w-1/5 items-center justify-start">
+    <div className="flex flex-col w-full mb-4 lg:w-1/5">
       <div className="p-8 space-y-2 rounded-lg shadow-lg w-full text-left bg-zinc-800">
         <p className="mb-4">Thoughts on information security, code & automation, and other myriad interests of mine.</p>
         <div className="flex space-x-2">

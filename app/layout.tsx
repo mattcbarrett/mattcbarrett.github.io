@@ -17,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${inter.className}`}>
         <div className="flex min-h-12 justify-center items-center bg-zinc-900">
           <div className="w-4/5 space-x-4 space-y-4 text-center">
             <Link href={"/"}>Home</Link>
