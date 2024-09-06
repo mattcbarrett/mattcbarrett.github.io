@@ -2,6 +2,8 @@
   title: "Second post"
   date: 8/5/2024
   author: Matt
+  tags:
+    - Postgres
 ---
 
 Nam eget tempus est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec metus magna, eleifend in porttitor sed, commodo id felis. In dignissim orci eget elit dictum laoreet. Donec sit amet urna vel mauris viverra imperdiet sit amet eget sapien. Nullam elit ligula, semper a purus vel, imperdiet pellentesque justo. Cras hendrerit, mi id hendrerit bibendum, sapien elit commodo metus, vel pharetra felis dui quis tellus. Mauris et nisl a nisi fermentum suscipit. Curabitur felis felis, fringilla in eros at, tincidunt volutpat ipsum. Donec dignissim magna augue, non venenatis nisi fermentum ac.
