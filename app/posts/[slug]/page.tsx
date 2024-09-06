@@ -9,9 +9,11 @@ type Props = {
 export const generateStaticParams = async () => {
   const posts = getAllPosts()
 
-  return posts.map((post) => ({
+  const map = posts.map((post) => ({
     slug: post.slug
   }))
+
+  return map
 }
 
 const page = ({ params }: Props) => {
