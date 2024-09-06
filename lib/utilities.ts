@@ -22,6 +22,10 @@ export const getAllPosts = () => {
   const files = getFilenames()
   const posts = files
   .map((filename) => getPostFromFile(filename))
+  .map(post => {
+    post.tagsLower = post.tags.map(tag => tag.toLowerCase().replaceAll(" ", "-"))
+    return post
+  })
   .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
 }

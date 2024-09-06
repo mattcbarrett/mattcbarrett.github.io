@@ -4,4 +4,6 @@ export interface Post {
   date: string
   author: string
   content: string
+  tags: string[]
+  tagsLower: string[]
 }
