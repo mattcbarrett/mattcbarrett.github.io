@@ -10,7 +10,7 @@ export default function PostLayout({ children }: { children: React.ReactNode }) 
         <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center">
           <div className="flex flex-col w-full lg:w-3/5 space-y-4 items-center justify-start mb-4">
             <div className="p-8 space-y-4 rounded-lg shadow-lg w-full bg-zinc-800">
-              <div className="text-justify p-x-4 ">
+              <div className="text-justify">
                 {children}
               </div>
             </div>

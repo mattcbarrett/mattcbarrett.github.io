@@ -8,7 +8,7 @@ type Props = {
 const BlogPost = (props: Props) => {
   const { post } = props
   return (
-    <div>
+    <>
       <div className="flex justify-between"> 
         <div className="text-xl">
           {post.title}
@@ -17,13 +17,13 @@ const BlogPost = (props: Props) => {
           {post.date}
         </div>
       </div>
-      <div className="p-x-4">
-        <Markdown className="prose text-left max-w-fit text-white">{post.content}</Markdown>
+      <div className="my-4">
+        <Markdown className="prose text-left max-w-fit text-zinc-400">{post.content}</Markdown>
       </div>
-      <div className="text-right text-sm">
+      <div className="text-right text-sm mt-8">
         -{post.author}
       </div>
-    </div>
+    </>
   )
 }
 
