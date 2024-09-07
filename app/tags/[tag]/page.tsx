@@ -27,11 +27,11 @@ const page = ({ params }: Props) => {
   if (!posts) notFound()
 
   return (
-    <div>
-      {posts.map((post) => (
-        <BlogPostTeaser post={post} />
+    <>
+      {posts.map((post, index) => (
+        <BlogPostTeaser post={post} key={`item-${index}`}/>
       ))}
-    </div>
+    </>
   )
 }
 
