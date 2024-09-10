@@ -1,8 +1,20 @@
+import { getAllPosts } from "@/lib/utilities"
 import Sidebar from "@/app/components/Sidebar"
+import PostTags from "@/app/components/PostTags"
 
 export default function PostLayout({ children }: { children: React.ReactNode }) {
   // Create any shared layout or styles here
-
+  const posts = getAllPosts()
+  const tags = 
+    posts
+      .map(post => post.tags)
+      .flat()
+      .sort()
+  const tagsLower = 
+    posts
+      .map(post => post.tagsLower)
+      .flat()
+      .sort()
 
   return (
     <div className="flex space-x-8 items-center justify-center">
@@ -13,6 +25,7 @@ export default function PostLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="flex flex-col w-full space-y-4 lg:w-1/5">
             <Sidebar />
+            <PostTags tags={tags} tagsLower={tagsLower} />
           </div>        
         </div>
       </div>
