@@ -21,12 +21,12 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${inter.className} bg-zinc-900 text-zinc-400`}>
-        <div className="flex min-h-12 justify-center items-center">
-          <div className="w-4/5 space-x-4 space-y-4 text-center">
+        <div className="flex min-h-4 justify-center items-center">
+          {/* <div className="w-4/5 space-x-4 space-y-4 text-center">
             <Link href={"/"}>Home</Link>
-            {/* <Link href={"/projects"}>Projects</Link> */}
+            <Link href={"/projects"}>Projects</Link>
             <Link href={"/about"}>About</Link>
-          </div>
+          </div> */}
         </div>
         {children}
         {/* <div className="min-h-4" /> */}
