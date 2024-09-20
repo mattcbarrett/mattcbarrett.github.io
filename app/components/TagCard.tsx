@@ -6,7 +6,7 @@ type Props = {
   tagsLower: string[]
 }
 
-const PostTags = ({ tags, tagsLower }: Props) => {
+const TagCard = ({ tags, tagsLower }: Props) => {
   const dedupedTags = [...new Set(tags)]
   return (
     <div className="p-8 space-y-2 rounded-lg shadow-lg w-full text-left bg-zinc-800">
@@ -23,4 +23,4 @@ const PostTags = ({ tags, tagsLower }: Props) => {
   )
 }
 
-export default PostTags
+export default TagCard
