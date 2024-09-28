@@ -16,7 +16,7 @@ const TagCard = ({ tags, tagsLower }: Props) => {
       
       <ul key="list">
         {dedupedTags.map((tag, index) => (
-          <li key={index}><Link href={`/tags/${tag.toLowerCase().replaceAll(" ", "-")}`} className="hover:text-zinc-300">{tag}</Link></li>
+          <li key={index}><Link href={`/tags/${tag.toLowerCase().replaceAll(" ", "-")}`} className="hover:text-zinc-300">{`${tag} (${tags.filter(e => e === tag).length})`}</Link></li>
         ))}
       </ul>
     </div>
