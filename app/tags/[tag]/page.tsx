@@ -44,7 +44,7 @@ const page = ({ params }: Props) => {
   return (
     <div className="flex space-x-8 items-center justify-center">
       <div className="lg:w-4/5 md:w-full mx-auto">
-        <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center">
+        <div className="flex flex-col-reverse lg:flex-row lg:space-x-8 justify-center">
           <div className="flex flex-col w-full lg:w-3/5 justify-start space-y-4">
             {posts.map((post, index) => (
               <BlogPostTeaser post={post} key={`item-${index}`}/>
