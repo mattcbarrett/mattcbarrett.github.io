@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Post } from "@/lib/types";
 import Markdown from "react-markdown";
+import { FaTags } from "react-icons/fa";
 
 type Props = {
   post: Post
@@ -9,7 +10,7 @@ type Props = {
 const BlogPostTeaser = (props: Props) => {
   const { post } = props
   const teaser = post.content.substring(0,350) + "..." //ellipsis so the post's content trails off
-  
+
   return (
     <div className="p-8 rounded-lg shadow-lg w-full bg-zinc-800 hover:bg-zinc-700">
       <Link href={`/posts/${post.slug}`} className="space-y-4">
@@ -29,7 +30,7 @@ const BlogPostTeaser = (props: Props) => {
         <div className="text-sm">
           {post.tags.map((tag, index) => (
             <Link href={`/tags/${tag.toLowerCase().replaceAll(" ", "-")}`} className="hover:text-zinc-300" key={`link-${index}`}>
-              {`${tag}, `}
+              {index === (post.tags.length - 1) ? `${tag}` : `${tag}, `}
             </Link>
           ))}
         </div>
