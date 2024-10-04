@@ -10,7 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      typography: ({ theme }: PluginUtils) => ({}),
+      typography: ({ theme }: PluginUtils) => ({
+        zinc400: {
+          css: {
+            '--tw-prose-body': theme('colors.zinc[400]'),
+            '--tw-prose-headings': theme('colors.zinc[400]'),
+            '--tw-prose-bold': theme('colors.zinc[400]'),
+          }
+        }
+      }),
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
