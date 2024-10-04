@@ -13,11 +13,11 @@ const BlogPostTeaser = (props: Props) => {
 
   return (
     <div className="p-8 rounded-lg shadow-lg w-full bg-zinc-800 hover:bg-zinc-700">
-      <Link href={`/posts/${post.slug}`} className="space-y-2">
+      <Link href={`/posts/${post.slug}`} >
         <div className="text-xl font-bold">
           {post.title}
         </div>
-        <div className="text-sm self-center">
+        <div className="text-sm self-center mt-2">
           {post.date}
         </div>
         <div className="mt-8">
