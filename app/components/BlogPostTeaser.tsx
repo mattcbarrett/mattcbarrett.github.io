@@ -20,7 +20,7 @@ const BlogPostTeaser = (props: Props) => {
         <div className="text-sm self-center">
           {post.date}
         </div>
-        <div className="p-x-4">
+        <div className="mt-8">
           <Markdown className="prose prose-zinc400 text-left max-w-fit text-zinc-400">{teaser}</Markdown>
         </div>
       </Link>
