@@ -1,11 +1,10 @@
-import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa"
 import BlogPostTeaser from "./components/BlogPostTeaser";
 import Sidebar from "./components/Sidebar";
 import { getAllPosts } from "@/lib/utilities";
 
 export default function Home() {
   const allPosts = getAllPosts()
+
   const tags = 
     allPosts
       .map(post => post.tags)
