@@ -21,7 +21,7 @@ const BlogPostTeaser = (props: Props) => {
           {post.date}
         </div>
         <div className="mt-8">
-          <Markdown className="prose prose-zinc400 text-left max-w-fit text-zinc-400">{teaser}</Markdown>
+          <Markdown className="prose prose-zinc400 text-left max-w-fit">{teaser}</Markdown>
         </div>
       </Link>
       <div className="mt-8 flex justify-between">

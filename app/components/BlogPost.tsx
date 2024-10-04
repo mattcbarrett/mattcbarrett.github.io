@@ -12,7 +12,7 @@ const BlogPost = (props: Props) => {
       <div className="text-xl font-bold">
         {post.title}
       </div>
-      <div className="text-sm self-center">
+      <div className="text-sm self-center mt-2">
         {post.date}
       </div>
       <div className="mt-8">
