@@ -12,9 +12,8 @@ const TagCard = ({ tags, tagsLower }: Props) => {
   return (
     <div className="p-8 space-y-2 rounded-lg shadow-lg w-full text-left bg-zinc-800">
       <div className="flex space-x-2">
-      <FaTags className="self-center" /><p className="prose text-zinc-400">Tags</p>
+        <FaTags className="self-center" /><p className="prose text-zinc-400">Tags</p>
       </div>
-      
       <ul key="list">
         {dedupedTags.map((tag, index) => (
           <li key={index}>
