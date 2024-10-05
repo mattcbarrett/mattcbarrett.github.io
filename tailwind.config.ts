@@ -16,6 +16,8 @@ const config: Config = {
             '--tw-prose-body': theme('colors.zinc[400]'),
             '--tw-prose-headings': theme('colors.zinc[400]'),
             '--tw-prose-bold': theme('colors.zinc[400]'),
+            '--tw-prose-links': theme('colors.zinc[400]'),
+            '--tw-prose-invert-links': theme('colors.white'),
           }
         }
       }),
