@@ -8,7 +8,7 @@ type Props = {
 const BlogPost = (props: Props) => {
   const { post } = props
   return (
-    <div className="space-y-2">
+    <div>
       <div className="text-xl font-bold">
         {post.title}
       </div>
