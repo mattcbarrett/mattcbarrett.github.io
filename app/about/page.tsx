@@ -27,7 +27,7 @@ const AboutPage = (props: Props) => {
           <div className="flex flex-col w-full lg:w-3/5 space-y-4 items-center mb-4">
             <div className="p-8 rounded-lg shadow-lg w-full bg-zinc-800">
               <p className="prose prose-zinc400 text-left max-w-fit">
-                I've learned a great deal from others over the years, benefitting from the idea that knowledge should be free. This is my effort to practice that same philosophy, contributing to the community that's helped me succeed, and passing on my own knowledge so others may benefit the same way I have.
+                {"I've learned a great deal from others over the years, benefitting from the idea that knowledge should be free. This is my effort to practice that same philosophy, contributing to the community that's helped me succeed, and passing on my own knowledge so others may benefit the same way I have."}
               </p>
             </div>
           </div>
