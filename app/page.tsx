@@ -28,7 +28,7 @@ export default function Home() {
             {allPosts.map((post, index) => (
               <div key={`${post}-${index}-div1`}>
                 <BlogPostTeaser post={post} key={post.slug} />
-                <div className="my-4" key={`${post}-${index}-div2`}/>
+                <div className="my-4" key={`${post}-${index}-div2`} />
                 {/* <div className="my-4 h-px border-t-0 bg-gray-4my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-25 dark:via-lime-400"  key={`${post}-${index}-div2`}/> */}
               </div>
             ))}
