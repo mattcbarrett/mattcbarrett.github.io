@@ -44,9 +44,7 @@ const page = ({ params }: Props) => {
           <Sidebar tags={tags} tagsLower={tagsLower} />  
           <div className="flex flex-col w-full lg:w-3/5 space-y-4 items-center justify-start mb-4">
             <div className="p-8 space-y-4 rounded-lg shadow-lg w-full bg-zinc-800">
-              <div className="text-justify">
-               <BlogPost post={post} />
-              </div>
+              <BlogPost post={post} />
             </div>
           </div>             
         </div>
