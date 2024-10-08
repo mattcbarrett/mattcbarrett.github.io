@@ -1,5 +1,5 @@
 ---
-  title: Automating Employee Onboarding - Part 1, Autopilot
+  title: Automating Employee Onboarding, Part 1 - Autopilot
   date: 10/8/2024
   author: Matt
   tags: 
