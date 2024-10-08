@@ -45,8 +45,8 @@ const tagsLower =
 
   const paginatedPosts: Post[][] = []
 
-  for (let i = 0; i < allPosts.length; i += 2) {
-    paginatedPosts.push(allPosts.slice(i, i + 2))
+  for (let i = 0; i < allPosts.length; i += 5) {
+    paginatedPosts.push(allPosts.slice(i, i + 5))
   }
 
   const posts = paginatedPosts[(Number(page) - 1)] //Subtract 1 so the page number from the route matches the correct array index
@@ -63,7 +63,7 @@ const tagsLower =
             ))}
             <div className="text-center space-x-2 mb-4">
               {paginatedPosts.map((page, index) => (
-                <Link href={`/page/${index + 1}`}>{index + 1}</Link>
+                <Link href={`/page/${index + 1}`} key={`page-${index}`}>{index + 1}</Link>
               ))}
             </div>
           </div>
