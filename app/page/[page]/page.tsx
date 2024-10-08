@@ -15,8 +15,8 @@ export const generateStaticParams = async () => {
   const allPosts = getAllPosts()
   const paginatedPosts: Post[][] = []
 
-  for (let i = 0; i < allPosts.length; i += 2) {
-    paginatedPosts.push(allPosts.slice(i, i + 2))
+  for (let i = 0; i < allPosts.length; i += 5) { // Need to turn this into a function for re-use below and in /app.tsx
+    paginatedPosts.push(allPosts.slice(i, i + 5))
   }
 
   const map = paginatedPosts.map((page, index) => ({
@@ -45,7 +45,7 @@ const tagsLower =
 
   const paginatedPosts: Post[][] = []
 
-  for (let i = 0; i < allPosts.length; i += 5) {
+  for (let i = 0; i < allPosts.length; i += 5) { // Need to turn this into a function for re-use above and in /app.tsx
     paginatedPosts.push(allPosts.slice(i, i + 5))
   }
 
@@ -63,7 +63,7 @@ const tagsLower =
             ))}
             <div className="text-center space-x-2 mb-4">
               {paginatedPosts.map((page, index) => (
-                <Link href={`/page/${index + 1}`} key={`page-${index}`}>{index + 1}</Link>
+                <Link href={`/page/${index + 1}`} key={`page-${index + 1}`}>{index + 1}</Link>
               ))}
             </div>
           </div>
