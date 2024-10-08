@@ -1,6 +1,8 @@
 import BlogPostTeaser from "./components/BlogPostTeaser";
 import Sidebar from "./components/Sidebar";
 import { getAllPosts } from "@/lib/utilities";
+import { Post } from "@/lib/types";
+import Link from "next/link";
 
 export default function Home() {
   const allPosts = getAllPosts()
@@ -17,6 +19,12 @@ export default function Home() {
       .flat()
       .sort()
 
+    const paginatedPosts: Post[][] = []
+  
+    for (let i = 0; i < allPosts.length; i += 2) {
+      paginatedPosts.push(allPosts.slice(i, i + 2))
+    }
+
   return (
     <div className="flex space-x-8 items-center justify-center">
       <div className="lg:w-4/5 md:w-full mx-auto">
@@ -32,6 +40,11 @@ export default function Home() {
                 {/* <div className="my-4 h-px border-t-0 bg-gray-4my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-25 dark:via-lime-400"  key={`${post}-${index}-div2`}/> */}
               </div>
             ))}
+            <div className="text-center space-x-2 mb-4">
+              {paginatedPosts.map((page, index) => (
+                <Link href={`/page/${index + 1}`}>{index + 1}</Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
