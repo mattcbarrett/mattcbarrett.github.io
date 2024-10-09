@@ -18,6 +18,8 @@ const config: Config = {
             '--tw-prose-bold': theme('colors.zinc[400]'),
             '--tw-prose-links': theme('colors.zinc[400]'),
             '--tw-prose-invert-links': theme('colors.white'),
+            '--tw-prose-pre-code': theme('colors.stone[400]'),
+            '--tw-prose-pre-bg': theme('colors.stone[900]'),
           }
         }
       }),
