@@ -21,11 +21,7 @@ Autopilot is the cornerstone of this approach. Once set up with your system manu
 
 See Microsoft's [documentation](https://learn.microsoft.com/en-us/autopilot/registration-overview) for more info on setting this up with your manufacturer or reseller.
 
-For now, lets set up a system to test with. Grab Microsoft's [Get-WindowsAutopilotInfo](https://www.powershellgallery.com/packages/Get-WindowsAutopilotInfo) script from Powershell Gallery and run it on your test endpoint:
-
-```
-Get-WindowsAutoPilotInfo.ps1 -OutputFile hardware_hash.csv
-```
+For now, lets set up a system to test with. Grab Microsoft's [Get-WindowsAutopilotInfo](https://www.powershellgallery.com/packages/Get-WindowsAutopilotInfo) script from Powershell Gallery and run it on your test endpoint.
 
 Next, in the Intune portal, go to Devices > Enrollment > Devices (under the "Windows Autopilot" header, scroll down.) Click the Import button in the toolbar and upload "hardware_hash.csv." Now, tick the checkbox next to the device's serial number and hit "Assign User" in the toolbar. Assign it to yourself, or another test account, and set the device's name too while you're at it.
 
