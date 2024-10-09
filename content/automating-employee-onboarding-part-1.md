@@ -7,6 +7,8 @@
     - Autopilot
 ---
 
+![abstract](/images/automating-employee-onboarding-part-1/kent-pilcher-jW8hkB_Qmj8-unsplash.jpg)
+
 ### Introduction
 
 Onboarding new employees can be a time consuming process for many SMB IT teams. Moreso if the company is growing at a steady clip and bringing on multiple employees per month (or even per week.) Hardware needs to be put in their hands prior to their start date, accounts created for them in a multitude of SaaS apps, software installed, credentials sent; and by the way, they're starting Monday. The strife caused between the business and IT due to inadequate lead time is a tale as old as time.
@@ -17,6 +19,10 @@ The goal of these articles is to provide solutions that remove IT as a blocker f
 
 Autopilot is the cornerstone of this approach. Once set up with your system manufacturer, either directly or through a VAR, endpoints will arrive already joined to Entra ID. This means you don't need to manually join the system or image it before handing it to a user. Just assign the system to an employee in the Intune portal and they'll be asked by name to sign in during the OOBE process. Once you assign software installers and configure the Enrollment Status Page, all of their apps will download during this process as well. They'll be assigned as the primary owner in Intune too, so they'll be able to use the Company Portal and install any software you've made available after the fact.
 
-See Microsoft's [documentation](https://learn.microsoft.com/en-us/autopilot/registration-overview) for more info. If you buy directly from a manufacturer or through a VAR, look into OEM registration. If your MSP purchases systems on your behalf, see Partner registration.
+See Microsoft's [documentation](https://learn.microsoft.com/en-us/autopilot/registration-overview) for more info on setting this up with your manufacturer or reseller.
 
-In the Intune portal, go to Devices > Enrollment > Devices (under the "Windows Autopilot" header, scroll down) to assign systems. Tick the checkbox next to the device's serial number and hit "Assign User" in the toolbar. You can set the device's name from the same pane as well.
+For now, let's set up a system to test with. Grab Microsoft's [Get-WindowsAutopilotInfo](https://www.powershellgallery.com/packages/Get-WindowsAutopilotInfo) script from Powershell Gallery and run it on your test endpoint; it should output a CSV file. Next, in the Intune portal, go to Devices > Enrollment > Devices (under the "Windows Autopilot" header, scroll down.) Click the Import button in the toolbar and upload the CSV file that Get-WindowsAutopilotInfo created. Now, tick the checkbox next to the device's serial number and hit "Assign User" in the toolbar. Assign it to yourself, or another test account, and set the device's name too while you're at it.
+
+Now the system's hash is associated with your Entra ID tenant, functionally locking it to your organization. Go ahead and test this out by reinstalling Windows, then run through the OOBE process. You should be able to sign right in with your Entra ID account, no IT-driven, manual join required. This alone removes IT from the early stages of the hardware lifecycle. Now, at minimum, you can ship a system directly to a new employee from the manufacturer and they'll be able to log in with their company account.
+
+If you stop here, you're still manually installing software though. Lets automate that too: [Part 2](/posts/automating-employee-onboarding-part-2)
