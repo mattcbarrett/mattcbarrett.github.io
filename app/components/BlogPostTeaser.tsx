@@ -15,7 +15,7 @@ const BlogPostTeaser = (props: Props) => {
     // <div className="p-8 rounded-lg shadow-lg w-full bg-zinc-800 hover:bg-zinc-700"> //original
     <>
       <div className="py-8">
-        <Link href={`/posts/${post.slug}`} className="hover:text-lime-400">
+        <Link href={`/posts/${post.slug}`} className="lg:hover:text-lime-400">
           <div className="text-xl font-bold">
             {post.title}
           </div>
