@@ -11,7 +11,7 @@
 
 ### Introduction
 
-Onboarding new employees can be a time consuming process for many SMB IT teams. Moreso if the company is growing at a steady clip and bringing on multiple employees per month (or even per week.) Hardware needs to be put in their hands prior to their start date, accounts created for them in a multitude of SaaS apps, software installed, credentials sent; and by the way, they're starting Monday. The strife that inadequate lead time causes between the business and IT is a tale as old as time.
+Onboarding new employees can be a time consuming process. Moreso if the company is growing at a steady clip and bringing on multiple employees per month (or even per week.) Hardware needs to be put in their hands prior to their start date, accounts created for them in a multitude of SaaS apps, software installed, credentials sent; and by the way, they're starting Monday. The strife that inadequate lead time causes between the business and IT is a tale as old as time.
 
 The goal of these articles is to provide solutions that remove IT as a blocker from the onboarding process. The series is split into 4 parts, each covering a different part of IT's process. By the end, shipping time will be the only constraint for a new hire's start date.
 
