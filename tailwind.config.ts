@@ -13,6 +13,7 @@ const config: Config = {
       typography: ({ theme }: PluginUtils) => ({
         zinc400: {
           css: {
+            maxWidth: '80ch',
             '--tw-prose-body': theme('colors.zinc[400]'),
             '--tw-prose-headings': theme('colors.zinc[400]'),
             '--tw-prose-bold': theme('colors.zinc[400]'),
