@@ -16,7 +16,7 @@ const BlogPost = (props: Props) => {
         {post.date}
       </div>
       <div className="mt-8">
-        <Markdown className="prose prose-zinc400 text-left max-w-fit">{post.content}</Markdown>
+        <Markdown className="prose prose-zinc400 text-left">{post.content}</Markdown>
       </div>
       <div className="text-right text-sm mt-8">
         -{post.author}

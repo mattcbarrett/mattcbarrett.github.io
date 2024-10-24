@@ -42,8 +42,8 @@ const page = ({ params }: Props) => {
         <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center">
           {/* Move Sidebar component after 3/5th width div to place sidebar on right side of page. Then change parent div to flex-col-reverse to ensure menu button appears at top of page on small viewports. */}
           <Sidebar tags={tags} tagsLower={tagsLower} />  
-          <div className="flex flex-col w-full lg:w-3/5 space-y-4 items-center justify-start mb-4">
-            <div className="pt-8">
+          <div className="flex flex-col lg:w-3/5 space-y-4 mb-4">
+            <div className="container mx-auto pt-8">
               <BlogPost post={post} />
             </div>
           </div>             
