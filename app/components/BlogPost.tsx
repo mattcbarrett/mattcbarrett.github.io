@@ -8,7 +8,7 @@ type Props = {
 const BlogPost = (props: Props) => {
   const { post } = props
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="text-xl font-bold">
         {post.title}
       </div>

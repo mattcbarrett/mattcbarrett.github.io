@@ -32,9 +32,7 @@ export default function Home() {
         <Sidebar tags={tags} tagsLower={tagsLower} />
         <div className="flex flex-col">
           {allPosts.map((post, index) => (
-            <div key={`${post.slug}-${index}-div`}>
               <BlogPostTeaser post={post} key={post.slug} />
-            </div>
           ))}
           <div className="text-center space-x-2 m-8">
             {paginatedPosts.map((page, index) => (
