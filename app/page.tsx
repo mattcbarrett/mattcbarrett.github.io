@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="lg:container lg:mx-auto">
-      <div className="flex lg:flex-row md:space-x-16 flex-col justify-center">
+      <div className="flex lg:flex-row lg:space-x-16 md:mx-8 mx-4 flex-col justify-center">
         {/* Move Sidebar component after 3/5th width div to place sidebar on right side of page. Then change parent div to flex-col-reverse to ensure menu button appears at top of page on small viewports. */}
         <Sidebar tags={tags} tagsLower={tagsLower} />
         <div className="flex flex-col">
