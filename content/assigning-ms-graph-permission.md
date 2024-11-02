@@ -5,6 +5,7 @@
   tags: 
     - Azure
     - MS Graph
+    - Powershell
 ---
 
 ![abstract](/images/assigning-ms-graph-permission/flyd-zAhAUSdRLJ8-unsplash_cropped.jpg)
