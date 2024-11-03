@@ -11,21 +11,19 @@
 
 ### Win32 vs Line of Business
 
-There's two ways to install 3rd party Windows apps through Intune, Win32 (exe/msi) and Line of business (msi). LOB apps can be uploaded directly in the Intune portal, which is great, if the app's developer provides an msi installer. Win32 apps can be either exe or msi, but you have to use Microsoft's Content Prep Tool to package it before uploading to Intune. Mixing the two can apparently lead to delays during deployment according to the research I've done (r/sysadmin, r/intune), so we'll focus on Win32 deployment in this article.
+There's primarily two ways to install 3rd party Windows apps through Intune, Win32 (exe/msi) and Line of business (msi). LOB apps can be uploaded directly in the Intune portal, which is great, if the app's developer provides an msi installer. Win32 apps can be either exe or msi, but you have to use Microsoft's Content Prep Tool to package it before uploading to Intune. Mixing the two can apparently lead to delays during deployment according to the research I've done (r/sysadmin, r/intune), so we'll focus on Win32 deployment in this article.
 
 ### Packaging with the Content Prep Tool
 
-Grab the [Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool) and choose an app from your tech stack that ships an installer in exe format. Create two folders alongside the tool called "apps" and "packages" respectively. Place the exe under the "apps" folder, open a terminal window, and navigate to the location of the tool. To create a package, run:
+The downside to Win32 apps is they have to be packaged first, you can't upload an exe directly to the portal. Grab the [Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool) and choose an app from your tech stack that ships an installer in exe format. Create two folders alongside the tool called "apps" and "packages" respectively. Place the exe under the "apps" folder, open a terminal window, and navigate to the location of the tool. To create a package, run:
 
 ```
 IntuneWinAppUtil.exe -c ./apps -s name_of_the_installer.exe -o ./packages
 ```
 
-Now open the Intune portal and navigate to Apps > Windows and add a new app, choosing Win32 for the type. Upload your package and fill out the name, description, and publisher. On the next page, enter the executable's name + install flags in the "install command" field like so:
+Now open the Intune portal and navigate to Apps > Windows and add a new app, choosing Win32 for the type. Upload your package and fill out the name, description, and publisher. On the next page, enter the executable's name + install flags in the "install command" field:
 
-```
-name_of_the_installer.exe /s /q
-```
+![screenshot of EXE install/uninstall strings](/images/automating-employee-onboarding-part-2/autopilot_part2_win32_exe1.png)
 
 For the uninstall string, since we're testing, you could just put the same command as the install string. However, to do it right, you'll need to install the app on a test system and pull the uninstall string from the registry. To display all apps & their uninstall strings, run:
 
@@ -45,6 +43,8 @@ Hit next and set an architecture and a minimum OS version. You can set further r
 
 Click next again and we're brought to the detection rules. I typically just use the "file" rule type, enter the path to the main application executable, and "exists" for the detection method. Again, you'll have to look at a system that already has the app installed to figure this out.
 
+![screenshot of EXE detection rule](/images/automating-employee-onboarding-part-2/autopilot_part2_win32_exe2.png)
+
 Hit next through both Dependencies and Supersedence, which should bring us to where the magic happens: Assignments. There's 3 options here, Required, Available, and Uninstall. These function how you'd expect: Required will install the app, Available will list the app in the Company Portal, and Uninstall will remove the app.
 
 ### Entra ID groups vs Virtual Groups
@@ -55,7 +55,7 @@ When the device registers for MDM during Autopilot, the Intune Management Extens
 
 This is why Intune has the All Users and All Devices "virtual" groups. These groups only exist in Intune, and All Devices is updated immediately upon MDM registration. Consequently, when the IME Agent checks in, the device is a member of the group, the assignments are found, and the software will install during Autopilot. Microsoft's docs on virtual groups (and filtering) is [here](https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters-performance-recommendations#virtual-groups).
 
-The next question is how to target devices when the groups clearly say _all_. This is where filters come in. Open Intune agian in a new tab and navigate to Devices > Organize devices > Filters and choose Create > Managed devices. Type "Company-owned devices" for the name and "Windows 10 or later" for the Platform and hit next.
+The next question is how to target a subset of devices when the groups clearly say _all_. This is where filters come in. Open Intune agian in a new tab and navigate to Devices > Organize devices > Filters and choose Create > Managed devices. Type "Company-owned devices" for the name and "Windows 10 or later" for the Platform and hit next.
 
 ![screenshot of filter expression](/images/automating-employee-onboarding-part-2/autopilot_part2_filters.png)
 
@@ -65,9 +65,19 @@ Now, should apps be assigned to Users or Devices? The answer is both. During Aut
 
 Ok, so let's finish adding this app. Assign it as "Required" for the All Devices virtual group, hit next, and create.
 
+### Packaging MSI installers
+
+Earlier I mentioned that Win32 app deployment also supports MSI format installers. The process is the same for the Content Prep Tool, but when you upload it to Intune, the install string, uninstall string, and the detection rule are automatically pulled from the MSI and populated for you.
+
+![screenshot of MSI install/uninstall strings](/images/automating-employee-onboarding-part-2/autopilot_part2_win32_msi1.png)
+
+![screenshot of MSI detection rule](/images/automating-employee-onboarding-part-2/autopilot_part2_win32_msi2.png)
+
+Figuring out the install/uninstall strings and building a detection rule every time you add an app sucks, so I always use an MSI when available.
+
 ### Configuring the Enrollment Status Page
 
-At this point, a device could be handed off to a new employee, they could log in, and the apps would download and install. However, nothing during OOBE will tell them this, they'll hit the desktop while apps are still installing, and odds are the first app they check for is the last one to install. So, lets save the service desk a few calls and configure the Enrollment Status Page to keep users informed during the whole Autopilot process.
+At this point, a device could be handed off to a new employee, they could log in, and the apps would download and install. However, nothing during OOBE will tell them this, they'll hit the desktop while apps are still installing, and odds are the first app they look for is the last one to install. So, lets save the service desk a few calls and configure the Enrollment Status Page to keep users informed during the whole Autopilot process.
 
 Navigate to Devices > Device onboarding > Enrollment and click Enrollment Status Page. Create a profile, name it, and hit next. Set "Show app and profile configuration progress" to yes, and customize the settings as necessary.
 
