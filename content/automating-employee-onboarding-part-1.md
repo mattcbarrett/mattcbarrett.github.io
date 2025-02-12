@@ -21,15 +21,15 @@ Autopilot is the cornerstone of this approach. It streamlines device setup by au
 
 There's [two ways](https://learn.microsoft.com/en-us/autopilot/device-preparation/compare) to set this up. The newer method is called "Windows Autopilot device preparation," and while it's less work to set up initially, it's not as streamlined for the end-user. They're still prompted to either "Set up for personal use" or "Set up for work or school," and choosing the wrong option means you're walking them through manually joining Entra ID, or doing it for them. Not the automated approach we're aiming for. So, in this article, we'll focus on the classic "Windows Autopilot" method.
 
-With Windows Autopilot, devices are pre-registered with Microsoft either by the manufacturer, by a reseller/partner, or manually by you. A combination of a "hardware hash," the Windows product key, or the manufacturer name, model, and serial number can all be used for registering the device with your Azure tenant. Microsoft's documentation on the topic is [here](https://learn.microsoft.com/en-us/autopilot/registration-overview), or if you really want to dive in, see this [blog post](https://oofhours.com/2020/01/29/windows-autopilot-device-registration-options-for-partners-using-the-tuple/). _TLDR: Email your reseller, tell them you want to set this up, and moving forward all the systems you order from them will be registered in Autopilot for you._
+With Windows Autopilot, devices are pre-registered with Microsoft either by the manufacturer, by a reseller/partner, or manually by you. A combination of a "hardware hash," the Windows product key, or the manufacturer name, model, and serial number can all be used for registering the device with your Azure tenant. Microsoft's documentation on the topic is [here](https://learn.microsoft.com/en-us/autopilot/registration-overview), or if you really want to dive in, see this [blog post](https://oofhours.com/2020/01/29/windows-autopilot-device-registration-options-for-partners-using-the-tuple/). *TLDR: Email your reseller, tell them you want to set this up, and moving forward all the systems you order from them will be registered in Autopilot for you.*
 
-In the mean time, let's register a test system manually to get a feel for what the user will experience.
+In the mean time, let's manually register a test system to get a feel for what the user will experience.
+
+### Automatic enrollment, deployment profiles, and the enrollment status page
 
 First, we need to set up automatic device registration with Intune MDM when a system joins Entra ID. To do this, navigate to Intune > Devices > Windows > Enrollment > Automatic Enrollment and set both the MDM user scope and WIP user scope to All.
 
 Second, we need to configure a deployment profile, which is what triggers the streamlined OOBE process. Navigate to Intune > Devices > Windows > Enrollment > Windows Autopilot deployment profiles and create one.
-
-### Configuring the Enrollment Status Page
 
 Third, we'll configure an Enrollment Status Page. Without it, the system will still join Entra ID, the user can still log in, and the apps will still install. However, nothing during OOBE will tell them their apps are installing. They'll just hit the desktop and the only indication something's happening is a desktop icon popping up every few minutes. Lets configure the Enrollment Status Page to keep users informed during the process. It'll save you some calls.
 
