@@ -18,7 +18,7 @@ const BlogPost = (props: Props) => {
       <div className="mt-8">
         <Markdown 
           className="prose prose-zinc400"
-          components={{img:({node,...props})=><img className="mx-auto max-w-full h-auto max-w-[600px]" {...props}/>}}
+          components={{img:({node,...props})=><img className="mx-auto max-w-full h-auto max-w-[550px]" {...props}/>}}
         >
           {post.content}
         </Markdown>
