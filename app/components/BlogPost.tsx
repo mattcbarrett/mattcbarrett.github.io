@@ -9,13 +9,18 @@ const BlogPost = (props: Props) => {
   const { post } = props
   return (
     <div className="container mx-auto">
-      <div className="text-xl font-bold">
-        {post.title}
-      </div>
-      <div className="text-sm self-center mt-2">
-        {post.date}
-      </div>
-      <div className="mt-8">
+      <div className="relative">
+          <img src={post.header_image} alt="header image" />
+          <div className="w-full absolute bottom-0 p-4 bg-black bg-opacity-75">
+            <div className="text-xl font-bold">
+              {post.title}
+            </div>
+            <div className="text-sm self-center mt-2">
+              {post.date}
+            </div>
+          </div>
+        </div>
+      <div className="pl-4 mt-8">
         <Markdown 
           className="prose prose-zinc400"
           components={{img:({node,...props})=><img className="mx-auto max-w-full h-auto max-w-[550px]" {...props}/>}}
