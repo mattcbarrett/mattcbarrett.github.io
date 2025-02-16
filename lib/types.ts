@@ -6,4 +6,5 @@ export interface Post {
   content: string
   tags: string[]
   tagsLower: string[]
+  header_image: string
 }
