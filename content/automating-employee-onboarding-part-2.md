@@ -10,7 +10,7 @@
 
 ### Win32 vs Line of Business
 
-There's primarily two ways to install 3rd party Windows apps through Intune, Win32 (exe/msi) and Line of business (msi). LOB apps can be uploaded directly in the Intune portal, which is great, if the app's developer provides an msi installer. Win32 apps can be either exe or msi, but you have to use Microsoft's Content Prep Tool to package it before uploading to Intune. I've heard anecdotes that mixing LOB and Win32 can lead to installation delays during deployment, but I've mixed them without issue in my current environment. In any case, we'll focus on Win32 deployment in this article.
+There's primarily two ways to install 3rd party Windows apps through Intune, Win32 (exe/msi) and Line of business (msi). LOB apps can be uploaded directly in the Intune portal, which is great, if the app's developer provides an msi installer. Win32 apps can be either exe or msi, but you have to use Microsoft's Content Prep Tool to package it before uploading to Intune. I've read that mixing LOB and Win32 can lead to installation delays during deployment, but I've mixed them without issue in my current environment. In any case, we'll focus on Win32 deployment in this article.
 
 ### Packaging with the Content Prep Tool
 
