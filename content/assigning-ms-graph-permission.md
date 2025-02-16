@@ -6,9 +6,8 @@
     - Azure
     - MS Graph
     - Powershell
+  header_image: /images/assigning-ms-graph-permission/flyd-zAhAUSdRLJ8-unsplash_cropped.jpg
 ---
-
-![abstract](/images/assigning-ms-graph-permission/flyd-zAhAUSdRLJ8-unsplash_cropped.jpg)
 
 ### Assigning permission
 

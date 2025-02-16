@@ -5,9 +5,8 @@
   tags: 
     - Intune
     - Enrollment Status Page
+  header_image: /images/automating-employee-onboarding-part-2/iyus-sugiharto-Eh1xd5xDE-s-unsplash.jpg
 ---
-
-![cityscape](/images/automating-employee-onboarding-part-2/iyus-sugiharto-Eh1xd5xDE-s-unsplash.jpg)
 
 ### Win32 vs Line of Business
 

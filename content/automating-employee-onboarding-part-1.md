@@ -5,9 +5,8 @@
   tags: 
     - Intune
     - Autopilot
+  header_image: /images/automating-employee-onboarding-part-1/kent-pilcher-jW8hkB_Qmj8-unsplash.jpg
 ---
-
-![abstract](/images/automating-employee-onboarding-part-1/kent-pilcher-jW8hkB_Qmj8-unsplash.jpg)
 
 ### Introduction
 

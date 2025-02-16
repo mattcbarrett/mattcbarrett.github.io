@@ -14,8 +14,8 @@ const BlogPostTeaser = (props: Props) => {
   return (
     <div className="container mx-auto mt-8">
       <Link href={`/posts/${post.slug}`} className="lg:hover:text-lime-400">
-        <div className="relative">
-          <img src={post.header_image} alt="header image" />
+        <div className="relative w-full">
+          <img src={post.header_image} alt="header image" className="w-full object-cover" />
           <div className="w-full absolute bottom-0 p-4 bg-black bg-opacity-75">
             <div className="text-xl font-bold">
               {post.title}
@@ -25,11 +25,11 @@ const BlogPostTeaser = (props: Props) => {
             </div>
           </div>
         </div>
-        <Markdown className="pl-4 pt-4 prose prose-zinc400">
+        <Markdown className="p-4 prose prose-zinc400 max-w-full">
           {teaser}
         </Markdown>
       </Link>
-      <div className="pl-4 mt-8 flex justify-between">
+      <div className="pl-4 mt-4 flex justify-between">
         <div className="flex">
           <FaTags className="self-center mr-2" />
           <div className="text-sm">  
