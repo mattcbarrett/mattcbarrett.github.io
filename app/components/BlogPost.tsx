@@ -23,7 +23,7 @@ const BlogPost = (props: Props) => {
       <div className="p-4 mt-4">
         <Markdown 
           className="prose prose-zinc400 max-w-full"
-          components={{img:({node,...props})=><img className="mx-auto max-w-full h-auto max-w-[550px]" {...props}/>}}
+          components={{img:({node,...props})=><img className="mx-auto h-auto md:max-w-[550px]" {...props}/>}}
         >
           {post.content}
         </Markdown>
