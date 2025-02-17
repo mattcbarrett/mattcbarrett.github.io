@@ -26,6 +26,11 @@ export const getAllPosts = () => {
     post.tagsLower = post.tags.map(tag => tag.toLowerCase().replaceAll(" ", "-"))
     return post
   })
-  .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  .sort(
+    (post1, post2) => {
+      let firstPostDate = (new Date(post1.date)).getTime()
+      let secondPostDate = (new Date(post2.date)).getTime()
+      return firstPostDate > secondPostDate ? -1 : 1
+    })
   return posts
 }
