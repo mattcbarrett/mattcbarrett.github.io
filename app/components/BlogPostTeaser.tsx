@@ -17,7 +17,7 @@ const BlogPostTeaser = (props: Props) => {
         <div className="relative w-full">
           <img src={post.header_image} alt="header image" className="w-full object-cover" />
           <div className="w-full absolute bottom-0 p-4 bg-black bg-opacity-75">
-            <div className="text-xl font-bold">
+            <div className="md:text-xl text-md font-bold">
               {post.title}
             </div>
             <div className="text-sm self-center mt-2">
