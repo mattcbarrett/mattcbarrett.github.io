@@ -15,7 +15,7 @@ const BlogPost = (props: Props) => {
             <div className="md:text-xl text-md font-bold">
               {post.title}
             </div>
-            <div className="text-sm self-center mt-2">
+            <div className="md:hidden text-sm self-center mt-2">
               {post.date}
             </div>
           </div>
