@@ -8,11 +8,11 @@
   header_image: /images/automated-onboarding-part-2/iyus-sugiharto-Eh1xd5xDE-s-unsplash.jpg
 ---
 
-### Win32 vs Line of Business
+# Win32 vs Line of Business
 
 There's primarily two ways to install 3rd party Windows apps through Intune, Win32 (exe/msi) and Line of business (msi). LOB apps can be uploaded directly in the Intune portal, which is great, if the app's developer provides an msi installer. Win32 apps can be either exe or msi, but you have to use Microsoft's Content Prep Tool to package it before uploading to Intune. I've read that mixing LOB and Win32 apps can lead to installation delays during deployment, but I've mixed the two without issue in my current environment. In any case, we'll focus on Win32 deployment in this post.
 
-### Packaging with the Content Prep Tool
+# Packaging with the Content Prep Tool
 
 The downside to Win32 apps is they have to be packaged first, you can't upload an exe directly to the portal. So, grab the [Content Prep Tool](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool) and choose an app from your tech stack that ships an installer in exe format. Create two folders alongside the tool called "apps" and "packages" respectively. Place the exe under the "apps" folder, open a terminal window, and navigate to the location of the tool. To create a package, run:
 
@@ -46,7 +46,7 @@ Click next again and we're brought to the detection rules. I typically just use 
 
 Hit next through both Dependencies and Supersedence, which should bring us to where the magic happens: Assignments. There's 3 options here: Required, Available, and Uninstall. These function how you'd expect: Required will install the app, Available will list the app in the Company Portal, and Uninstall will remove the app.
 
-### Entra ID groups vs Virtual Groups
+# Entra ID groups vs Virtual Groups
 
 You may have noticed the 3 links that say "Add group," "Add all users," and "Add all devices." This seems straightforward, but there's ramifications for the Autopilot process.
 
@@ -64,7 +64,7 @@ Now, should apps be assigned to Users,  or to Devices? The answer is both. Durin
 
 Ok, enough explanation. Finish adding the app by assigning it as "Required" for either All Devices or All Users, apply a filter if you created one, then hit next and create. Now when you run through autopilot you'll see the app installing on the Enrollment Status Page.
 
-### ...MSI installers are easier
+# ...MSI installers are easier
 
 Earlier I mentioned that Win32 app deployment also supports MSI format installers. The process is the same for the Content Prep Tool, but when you upload it to Intune, the install string, the uninstall string, and the detection rule are automatically pulled from the MSI and populated for you.
 

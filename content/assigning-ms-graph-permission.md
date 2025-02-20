@@ -9,7 +9,7 @@
   header_image: /images/assigning-ms-graph-permission/flyd-zAhAUSdRLJ8-unsplash_cropped.jpg
 ---
 
-### Assigning permission
+# Assigning permission
 
 Recently I needed to grant a Powershell script, running in a Function App in Azure, access to read the properties of devices in Intune. I quickly generated a managed identity for the app and went to assign it the "DeviceManagementManagedDevices.Read.All" permission for MS Graph. It turned out that none of the built-in roles in Azure included this permission, and that it was necessary to use use Powershell instead.
 

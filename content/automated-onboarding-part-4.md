@@ -10,19 +10,19 @@
 
 To recap, we've [streamlined joining systems to Entra ID](/posts/automated-onboarding-part-1), [automated software deployment](/posts/automated-onboarding-part-2), and [set up a one-click account creation process](/posts/automated-onboarding-part-3). Depending on the size of your tech stack that may be sufficient, however, those last three articles don't help with non-Microsoft platforms like Zoom or Slack. SCIM is the solution.
 
-### What is SCIM?
+# What is SCIM?
 
 SCIM is a [protocol](https://scim.cloud/) that allows for identity management between different platforms. It allows for automatic provisioning of accounts in other platforms based on an central identity store, in this case, Entra ID. Most platforms will sync your Groups via SCIM as well, turning this into a powerful way to apply permissions across SaaS platforms.
 
 Now, before we get too far, there's a catch - SCIM is commonly bundled with SSO and gatekept behind higher-tier SKUs by many platforms. See [ssotax.org](https://ssotax.org/) for a list. Sometimes this is a moderate increase, but all too often it can double your subscription cost. It's unfortunate that companies leverage this as an additional revenue stream, but that's the state of the market today.
 
-### Setting up dynamic groups
+# Setting up dynamic groups
 
 SCIM really shines when combined with dynamic groups, allowing accounts to be provisioned based on department, team, or focus area. Once you assign a group to an Enterprise App with Provisioning enabled, accounts will be created in that app for all group members. Most platforms sync the groups too, so you can assign permissions within those other platforms based on your groups from Entra ID. This is a really powerful way to automatically apply permissions in your SaaS platforms.
 
 So, head off to Entra ID and open up the Groups pane. Create a new group, give it a name, and choose the "Dynamic" membership type. Now you can create rules that will determine the group's membership. If you need a step-by-step, Microsoft's got one for you [here](https://learn.microsoft.com/en-us/entra/identity/users/groups-create-rule). I would recommend creating dynamic groups for each department in your company as a starting point. I might suggest also creating an "All Employees" group, maybe based on the Company attribute, that you can use for automatic Microsoft 365 license assignments.
 
-### Setting up provisioning
+# Setting up provisioning
 
 To set up provisioning, you need to add an Enterprise App in Entra ID for the SaaS platform you want to integrate. Microsoft has documentation for a *ton* of different platforms - here's the one for [Zoom](https://learn.microsoft.com/en-us/entra/identity/saas-apps/zoom-provisioning-tutorial) as an example. Pro tip - set this up from [portal.azure.com](https://portal.azure.com) NOT through [entra.microsoft.com](https://entra.microsoft.com). For some reason Microsoft only makes certain settings editable in the Azure portal. Save yourself some grief.
 

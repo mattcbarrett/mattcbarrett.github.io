@@ -10,13 +10,13 @@
   header_image: /images/automated-onboarding-part-3/markus-spiske-cvBBO4PzWPg-unsplash_cropped.jpg
 ---
 
-### Why shouldn't accounts be created manually?
+# Why shouldn't accounts be created manually?
 
 Humans are inconsistent, forgetful creatures. Ask us to do the same thing two or three times and chances are we'll do it two or three different ways. Manually clicking through a UI to create accounts leaves room for error, takes time, and ultimately costs money, particularly if the job is outsourced. Greater consistency, efficiency, and savings is an easy sell. 
 
 In this article, we'll build a system that creates accounts in two clicks.
 
-### Creating Entra ID accounts programmatically
+# Creating Entra ID accounts programmatically
 
 There's two scripts we need, one to generate an initial password, and another to create the account in Entra ID.
 
@@ -28,7 +28,7 @@ Ok, now we can create the actual account. I use a wrapper script around New-MgUs
 
 You could just use these two scripts to create accounts and it'd certainly be faster than clicking through a UI. However, we want to create accounts in two clicks, right?
 
-### Creating an API
+# Creating an API
 
 To reach our goal, we need an API endpoint that accepts POST requests with a JSON payload. Azure Functions provides a quick way to do this.
 
@@ -80,7 +80,7 @@ $appRoles | % { New-AzADServicePrincipalAppRoleAssignment -ServicePrincipalId $m
 
 I've had to wait 50 minutes for this to take effect before, so some patience is required here.
 
-### Using the API
+# Using the API
 
 Before we can use the API, we need to know the URL. To do that, we need to fetch the function key that needs to be included in the request in order for the function to execute. We also need to know the hostname.
 
@@ -109,7 +109,7 @@ curl -X POST https://hostname/api/HttpTrigger1?code=function_key \
 
 You should receive a 201 Created response and a JSON payload with the username & password of the account.
 
-### Collecting new employee details
+# Collecting new employee details
 
 Alright, so now what? This isn't doing us much good without a way to gather attributes and pass them to the API. Let's build a form to gather the data. 
 
@@ -129,7 +129,7 @@ Now set First Name, Last Name, and Manager as type "Text" and mark them as requi
 
 First & Last are required in order to create an account, however Manager and Start Date aren't technically necessary. They're just for IT's benefit.  
 
-### Call the API via Power Automate
+# Call the API via Power Automate
 
 Go to [make.powerautomate.com](https://make.powerautomate.com) and create an "Automated cloud flow."
 

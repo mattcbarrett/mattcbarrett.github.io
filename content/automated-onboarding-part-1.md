@@ -8,13 +8,13 @@
   header_image: /images/automated-onboarding-part-1/kent-pilcher-jW8hkB_Qmj8-unsplash.jpg
 ---
 
-### Introduction
+# Introduction
 
 Onboarding employees can be time consuming, especially if IT is creating accounts and installing software manually. Adequate lead time from the business is necessary to account for IT's workload, hardware and software procurement, and setup. Often that lead time conflicts with when the employee needs to start work, leading to frustration for all involved. The goal of these posts is to provide solutions that remove IT as a blocker from the onboarding process. 
 
 The series consists of four parts, each covering a different stage of IT's process, and in the end shipping time will be the only constraint for new hire's start dates. Let's start with device setup.
 
-### Autopilot
+# Autopilot
 
 Autopilot is the cornerstone of an automated approach to setup. It automatically configures the system and installs applications when the user first logs in, using the existing image installed by the manufacturer. From the user's perspective, they sign in, wait a few minutes for apps to install, and then they're at the desktop. From IT's perspective, all it took was shipping a laptop.
 
@@ -24,7 +24,7 @@ With Windows Autopilot, devices are pre-registered with Microsoft either by the 
 
 In the mean time, let's manually register a test system to get a feel for what the user will experience.
 
-### Automatic enrollment, deployment profiles, and the enrollment status page
+# Automatic enrollment, deployment profiles, and the enrollment status page
 
 First, we need to set up automatic device registration with Intune MDM when a system joins Entra ID. To do this, navigate to Intune > Devices > Windows > Enrollment > Automatic Enrollment and set both the MDM user scope and WIP user scope to All.
 
