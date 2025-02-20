@@ -9,11 +9,11 @@ type Props = {
 
 const BlogPostTeaser = (props: Props) => {
   const { post } = props
-  const teaser = post.content.substring(0,750) + "..." //ellipsis so the post's content trails off
+  const teaser = post.content.substring(0,550) + "..." //ellipsis so the post's content trails off
 
   return (
     <div className="container mx-auto mt-8">
-      <Link href={`/posts/${post.slug}`} className="lg:hover:text-lime-400">
+      <Link href={`/posts/${post.slug}`} className="hover:text-lime-400">
         <div className="relative w-full">
           <img src={post.header_image} alt="header image" className="w-full object-cover" />
           <div className="w-full absolute bottom-0 p-4 bg-black bg-opacity-75">
@@ -25,7 +25,16 @@ const BlogPostTeaser = (props: Props) => {
             </div>
           </div>
         </div>
-        <Markdown className="p-4 prose prose-zinc400 max-w-full">
+        <Markdown 
+          className="p-4 prose prose-zinc400 max-w-full"
+          components={
+            {
+              img: ({node,...props})=><img className="mx-auto h-auto md:max-w-[550px]" {...props}/>,
+              h1: ({node,...props})=><h1 className="md:text-xl text-base" {...props}/>,
+              h2: ({node,...props})=><h2 className="md:text-xl text-base" {...props}/>,
+              h3: ({node,...props})=><h3 className="md:text-xl text-base" {...props}/>
+            }
+          }>
           {teaser}
         </Markdown>
       </Link>
