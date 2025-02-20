@@ -32,6 +32,8 @@ const AboutPage = (props: Props) => {
             <Link href="https://virustotal.com" className="hover:text-lime-400">Virustotal</Link>
             <Link href="https://p.ost2.fyi/courses/" className="hover:text-lime-400">OpenSecurityTraining2</Link>
             <Link href="https://malwaretech.com/" className="hover:text-lime-400">MalwareTech</Link>
+            <Link href="https://exploitreversing.com/" className="hover:text-lime-400">Exploit Reversing</Link>
+            <Link href="https://www.sectemplates.com/" className="hover:text-lime-400">SecTemplates</Link>
           </div>
         </div>
       </div>
