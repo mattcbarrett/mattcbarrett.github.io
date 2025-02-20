@@ -20,7 +20,7 @@ const BlogPost = (props: Props) => {
             </div>
           </div>
         </div>
-      <div className="md:p-4 p-2 mt-4">
+      <div className="md:p-4 pl-2 mt-4">
         <Markdown 
           className="prose prose-zinc400 max-w-full"
           components={

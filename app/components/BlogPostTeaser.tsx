@@ -26,7 +26,7 @@ const BlogPostTeaser = (props: Props) => {
           </div>
         </div>
         <Markdown 
-          className="md:p-4 p-2 prose prose-zinc400 max-w-full"
+          className="md:p-4 pl-2 pt-4 prose prose-zinc400 max-w-full"
           components={
             {
               img: ({node,...props})=><img className="mx-auto h-auto md:max-w-[550px]" {...props}/>,
