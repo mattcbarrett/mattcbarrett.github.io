@@ -26,7 +26,7 @@ const BlogPostTeaser = (props: Props) => {
           </div>
         </div>
         <Markdown 
-          className="md:p-4 pl-2 pt-4 prose prose-zinc400 max-w-full"
+          className="md:pl-4 md:pr-4 pl-2 pr-4 pt-4 prose prose-zinc400 max-w-full"
           components={
             {
               img: ({node,...props})=><img className="mx-auto h-auto md:max-w-[550px]" {...props}/>,
@@ -38,7 +38,7 @@ const BlogPostTeaser = (props: Props) => {
           {teaser}
         </Markdown>
       </Link>
-      <div className="md:pl-4 pl-2 mt-4 pl-2flex justify-between">
+      <div className="md:pl-4 pl-2 mt-4 flex justify-between">
         <div className="flex">
           <FaTags className="self-center mr-2" />
           <div className="text-sm">  
