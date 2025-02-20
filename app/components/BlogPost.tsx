@@ -36,9 +36,9 @@ const BlogPost = (props: Props) => {
           {post.content}
         </Markdown>
       </div>
-      <div className="text-right text-sm mt-4">
+      {/* <div className="text-right text-sm mt-4">
         -{post.author}
-      </div>
+      </div> */}
     </div>
   )
 }
