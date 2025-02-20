@@ -11,16 +11,16 @@ const BlogPost = (props: Props) => {
     <div className="container mx-auto lg:max-w-[800px]">
       <div className="relative w-full">
           <img src={post.header_image} alt="header image" className="w-full object-cover" />
-          <div className="w-full absolute bottom-0 p-4 bg-black bg-opacity-75">
+          <div className="w-full absolute bottom-0 md:p-4 p-2 bg-black bg-opacity-75">
             <div className="md:text-xl text-base font-bold">
               {post.title}
             </div>
-            <div className="text-sm self-center mt-2">
+            <div className="md:text-sm text-xs italic">
               {post.date}
             </div>
           </div>
         </div>
-      <div className="p-4 mt-4">
+      <div className="md:p-4 p-2 mt-4">
         <Markdown 
           className="prose prose-zinc400 max-w-full"
           components={
@@ -36,9 +36,9 @@ const BlogPost = (props: Props) => {
           {post.content}
         </Markdown>
       </div>
-      {/* <div className="text-right text-sm mt-4">
+      <div className="mt-4 md:ml-4 ml-2 text-sm italic">
         -{post.author}
-      </div> */}
+      </div>
     </div>
   )
 }
