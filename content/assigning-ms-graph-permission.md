@@ -23,11 +23,16 @@ Install-Module Az.Resources -Scope CurrentUser
 
 ```powershell
 Connect-AzAccount
-$managedIdentitySPN = ''
-$msGraphPermissions = ''
 
-$msGraphAppId = '00000003-0000-0000-c000-000000000000'
-$msGraphSPN = Get-AzADServicePrincipal -Filter "appId eq '$msGraphAppId'"
-$appRoles = $msGraphSPN.AppRole | Where-Object {$_.Value -in $msGraphPermissions -and $_.AllowedMemberType -contains 'Application'}
-$appRoles | % { New-AzADServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentitySPN -ResourceId $msGraphSPN.Id -AppRoleId $_.Id }
+$msGraphPermissions = @(
+  'DeviceManagementManagedDevices.Read.All',
+  'Mail.Send'
+)
+$managedIdentitySPN = ''
+$msGraphSPN = Get-AzADServicePrincipal -Filter "appId eq '00000003-0000-0000-c000-000000000000'"
+
+foreach ($permission in $msGraphPermissions) {
+  $appRoles = $msGraphSPN.AppRole | Where-Object {$_.Value -in $permission -and $_.AllowedMemberType -contains 'Application'}
+  $appRoles | % { New-AzADServicePrincipalAppRoleAssignment -ServicePrincipalId $managedIdentitySPN -ResourceId $msGraphSPN.Id -AppRoleId $_.Id }
+}
 ```
