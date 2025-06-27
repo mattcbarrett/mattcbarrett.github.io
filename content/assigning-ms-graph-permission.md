@@ -25,8 +25,8 @@ Install-Module Az.Resources -Scope CurrentUser
 Connect-AzAccount
 
 $msGraphPermissions = @(
-  'DeviceManagementManagedDevices.Read.All',
-  'Mail.Send'
+  'User.Read.All',
+  'Device.Read.All'
 )
 $managedIdentitySPN = ''
 $msGraphSPN = Get-AzADServicePrincipal -Filter "appId eq '00000003-0000-0000-c000-000000000000'"
