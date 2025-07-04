@@ -34,6 +34,8 @@ const AboutPage = (props: Props) => {
             <Link href="https://malwaretech.com/" className="hover:text-lime-400">MalwareTech</Link>
             <Link href="https://exploitreversing.com/" className="hover:text-lime-400">Exploit Reversing</Link>
             <Link href="https://www.sectemplates.com/" className="hover:text-lime-400">SecTemplates</Link>
+            <Link href="https://talkback.sh/" className="hover:text-lime-400">talkback.sh</Link>
+            <Link href="https://www.thehacker.recipes/" className="hover:text-lime-400">The Hacker Recipes</Link>
           </div>
         </div>
       </div>
