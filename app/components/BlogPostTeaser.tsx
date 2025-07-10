@@ -12,7 +12,7 @@ const BlogPostTeaser = (props: Props) => {
   const teaser = post.content.substring(0,550) + "..." //ellipsis so the post's content trails off
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto mt-6">
       <Link href={`/posts/${post.slug}`} className="hover:text-lime-400">
         <div className="relative w-full">
           <img src={post.header_image} alt="header image" className="w-full object-cover" />

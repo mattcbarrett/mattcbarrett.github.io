@@ -19,16 +19,14 @@ const AboutPage = (props: Props) => {
       .sort()
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="lg:w-4/5 md:w-full px-8 mx-auto">
-        <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center">
-          {/* Move Sidebar component after 3/5th width div to place sidebar on right side of page. Then change parent div to flex-col-reverse to ensure menu button appears at top of page on small viewports. */}
-          <Sidebar tags={tags} tagsLower={tagsLower} />   
-          <div className="flex flex-col w-full lg:w-3/5 py-8 items-center mb-4">
-            <p className="prose prose-zinc400 text-left max-w-fit">
-              {"I've learned a great deal from others over the years, benefitting from the idea that knowledge should be free. This is my effort to practice that same philosophy, contribute to the community that's helped me succeed, and pass on my own knowledge so others may benefit in the same way."}
-            </p>
-          </div>
+    <div className="lg:container lg:mx-auto">
+      <div className="flex lg:flex-row lg:space-x-16 md:mx-8 flex-col justify-center">
+        {/* Move Sidebar component after 3/5th width div to place sidebar on right side of page. Then change parent div to flex-col-reverse to ensure menu button appears at top of page on small viewports. */}
+        <Sidebar tags={tags} tagsLower={tagsLower} />   
+        <div className="flex flex-col lg:max-w-[800px] py-4">
+          <p className="prose prose-zinc400 text-left ml-4">
+            {"Most of my knowledge was gained from forums or blogs such as this, and I've come to share the philosophy that knowledge should be free. This site is a meager contribution."}
+          </p>
         </div>
       </div>
     </div>
