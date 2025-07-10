@@ -1,8 +1,7 @@
-import BlogPostTeaser from "./components/BlogPostTeaser";
-import Sidebar from "./components/Sidebar";
-import { getAllPosts } from "@/lib/utilities";
-import { Post } from "@/lib/types";
-import Link from "next/link";
+import BlogPostTeaser from "./components/BlogPostTeaser"
+import { getAllPosts } from "@/lib/utilities"
+import { Post } from "@/lib/types"
+import Link from "next/link"
 
 export default function Home() {
   const allPosts = getAllPosts()
