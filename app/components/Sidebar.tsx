@@ -21,7 +21,7 @@ const Sidebar = (props: Props) => {
     <>
       <div className="lg:hidden ml-auto mr-4">
         <button
-          className="text-zinc-300 focus:outline-none"
+          className="mt-4 text-zinc-300 focus:outline-none"
           onClick={toggleSidebar}
         >
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
