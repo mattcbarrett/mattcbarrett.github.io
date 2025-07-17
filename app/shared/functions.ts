@@ -1,7 +1,7 @@
 import fs from "fs"
 import matter from "gray-matter"
 import { join } from "path"
-import { Post } from "@/lib/types"
+import { Post } from "@/app/shared/types"
 
 const contentDir = join(process.cwd(), "content")
 
@@ -33,4 +33,14 @@ export const getAllPosts = () => {
       return firstPostDate > secondPostDate ? -1 : 1
     })
   return posts
+}
+
+export const paginatePosts = (posts: Post[]) => {
+  const pages: Post[][] = []
+
+  for (let i = 0; i < posts.length; i += 5) {
+    pages.push(posts.slice(i, i += 5))
+  }
+
+  return pages
 }

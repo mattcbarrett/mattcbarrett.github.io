@@ -1,20 +1,14 @@
 import BlogPostTeaser from "./components/BlogPostTeaser"
-import { getAllPosts } from "@/lib/utilities"
-import { Post } from "@/lib/types"
+import { getAllPosts, paginatePosts } from "@/app/shared/functions"
 import Link from "next/link"
 
 export default function Home() {
-  const allPosts = getAllPosts()
-
-    const paginatedPosts: Post[][] = []
-  
-    for (let i = 0; i < allPosts.length; i += 5) {
-      paginatedPosts.push(allPosts.slice(i, i + 5))
-    }
+  const posts = getAllPosts()
+  const paginatedPosts = paginatePosts(posts)
 
   return (
     <>
-      {allPosts.map((post, index) => (
+      {posts.map((post, index) => (
           <BlogPostTeaser post={post} key={post.slug} />
       ))}
       <div className="text-center space-x-2 mb-8">

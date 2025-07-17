@@ -1,4 +1,4 @@
-import { Post } from "@/lib/types";
+import { Post } from "@/app/shared/types";
 import Markdown from "react-markdown";
 
 type Props = {
@@ -36,7 +36,7 @@ const BlogPost = (props: Props) => {
           {post.content}
         </Markdown>
       </div>
-      <div className="mt-4 md:ml-4 ml-2 text-sm italic">
+      <div className="mt-4 md:ml-4 ml-2 mb-4 text-sm italic">
         -{post.author}
       </div>
     </>

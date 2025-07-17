@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getAllPosts } from "@/lib/utilities"
+import { getAllPosts } from "@/app/shared/functions"
 import BlogPost from "@/app/components/BlogPost"
 
 type Props = {

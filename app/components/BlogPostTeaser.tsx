@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "@/lib/types";
+import { Post } from "@/app/shared/types";
 import Markdown from "react-markdown";
 import { FaTags } from "react-icons/fa";
 

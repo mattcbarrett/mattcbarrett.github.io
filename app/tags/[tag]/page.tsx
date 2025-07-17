@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation"
-import { getAllPosts } from "@/lib/utilities"
+import { getAllPosts } from "@/app/shared/functions"
 import BlogPostTeaser from "@/app/components/BlogPostTeaser"
-import Sidebar from "@/app/components/Sidebar"
 
 type Props = {
   params: any
