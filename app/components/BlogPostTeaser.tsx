@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { Post } from "@/app/shared/types";
-import Markdown from "react-markdown";
-import { FaTags } from "react-icons/fa";
+import Link from "next/link"
+import { Post } from "@/app/shared/types"
+import Markdown from "react-markdown"
+import { FaTags } from "react-icons/fa"
+import Divider from "./Divider"
 
 type Props = {
   post: Post
@@ -50,7 +51,7 @@ const BlogPostTeaser = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="h-px bg-transparent bg-gradient-to-r from-transparent via-zinc-400 to-transparent my-8"/>
+      <Divider />
     </div>
   )
 }

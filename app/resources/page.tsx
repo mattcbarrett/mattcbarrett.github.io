@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Divider from '../components/Divider'
 
 type Props = {}
 
@@ -7,11 +8,12 @@ const ResourcesPage = (props: Props) => {
   return (
     <>
       {/* row 1 */}
-      <div className="flex gap-16 max-w-4xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-16 max-w-4xl mx-auto">
 
         {/* column 1 */}
         <div className="flex flex-col space-y-2">
-          <p className="text-2xl font-bold text-center mb-2">Tools</p>
+          <p className="text-2xl font-bold text-center">Tools</p>
+          <Divider />
           <Link href="https://virustotal.com" className="hover:text-lime-400">
             Virustotal
           </Link>
@@ -22,7 +24,8 @@ const ResourcesPage = (props: Props) => {
 
         {/* column 2 */}
         <div className="flex flex-col space-y-2">
-          <p className="text-2xl font-bold text-center mb-2">Education</p>
+          <p className="text-2xl font-bold text-center">Education</p>
+          <Divider />
           <Link href="https://p.ost2.fyi/courses/" className="hover:text-lime-400">
             OpenSecurityTraining2
           </Link>
@@ -42,7 +45,8 @@ const ResourcesPage = (props: Props) => {
 
         {/* column 3 */}
         <div className="flex flex-col space-y-2">
-          <p className="text-2xl font-bold text-center mb-2">Intel</p>
+          <p className="text-2xl font-bold text-center">Intel</p>
+          <Divider />
           <Link href="https://talkback.sh/" className="hover:text-lime-400">
             talkback.sh
           </Link>
