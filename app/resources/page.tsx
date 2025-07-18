@@ -12,7 +12,7 @@ const ResourcesPage = (props: Props) => {
 
         {/* column 1 */}
         <div className="flex flex-col space-y-2">
-          <p className="text-2xl font-bold text-center">Tools</p>
+          <p className="text-2xl font-bold text-left md:text-center">Tools</p>
           <Divider />
           <Link href="https://virustotal.com" className="hover:text-lime-400">
             Virustotal
@@ -27,7 +27,7 @@ const ResourcesPage = (props: Props) => {
 
         {/* column 2 */}
         <div className="flex flex-col space-y-2">
-          <p className="text-2xl font-bold text-center">Education</p>
+          <p className="text-2xl font-bold text-left md:text-center">Education</p>
           <Divider />
           <Link href="https://p.ost2.fyi/courses/" className="hover:text-lime-400">
             OpenSecurityTraining2
@@ -48,7 +48,7 @@ const ResourcesPage = (props: Props) => {
 
         {/* column 3 */}
         <div className="flex flex-col space-y-2">
-          <p className="text-2xl font-bold text-center">Intel</p>
+          <p className="text-2xl font-bold text-left md:text-center">Intel</p>
           <Divider />
           <Link href="https://talkback.sh/" className="hover:text-lime-400">
             talkback.sh
