@@ -20,6 +20,9 @@ const ResourcesPage = (props: Props) => {
           <Link href="https://rawhttp.com/" className="hover:text-lime-400">
             rawhttp
           </Link>
+          <Link href="https://urlscan.io/" className="hover:text-lime-400">
+            urlscan.io
+          </Link>
         </div>
 
         {/* column 2 */}
