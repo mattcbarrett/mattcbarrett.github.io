@@ -8,7 +8,7 @@ const ResourcesPage = (props: Props) => {
   return (
     <>
       {/* row 1 */}
-      <div className="flex flex-col md:flex-row gap-32 max-w-4xl ml-4 mr-4 md:mx-auto">
+      <div className="flex flex-col md:flex-row gap-16 md:gap-32 max-w-4xl ml-4 mr-4 md:mx-auto">
 
         {/* column 1 */}
         <div className="flex flex-col space-y-2">
