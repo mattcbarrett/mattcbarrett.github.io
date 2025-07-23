@@ -27,7 +27,6 @@ const TagCard = ({ tags, tagsLower }: Props) => {
           </li>
         ))}
       </ul>
-      <div className="absolute top-0 right-0 h-full w-px bg-gradient-to-b from-transparent via-zinc-400 to-transparent" />
     </div>
   )
 }
