@@ -32,7 +32,7 @@ const Sidebar = (props: Props) => {
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
-      <div className={`flex flex-col space-y-8 lg:sticky mx-4 mb-4 lg:ml-4 lg:top-0 lg:h-screen min-w-[100px] max-w-[300px] transition-transform duration-300 lg:block ${isOpen ? 'block' : 'hidden'} `}>
+      <div className={`flex flex-col space-y-8 lg:sticky mx-4 mb-4 lg:ml-4 lg:mt-4 lg:top-0 lg:h-screen min-w-[100px] max-w-[300px] transition-transform duration-300 lg:block ${isOpen ? 'block' : 'hidden'} `}>
         <MenuCard setIsOpen={setIsOpen} />
         <TagCard tags={tags} tagsLower={tagsLower} setIsOpen={setIsOpen} />
       </div>
