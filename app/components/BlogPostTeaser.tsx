@@ -13,7 +13,7 @@ const BlogPostTeaser = (props: Props) => {
   const teaser = post.content.substring(0,550) + "..." //ellipsis so the post's content trails off
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pl-4 pr-4">
       <Link href={`/posts/${post.slug}`} className="hover:text-lime-400">
         <div className="relative w-full">
           <img src={post.header_image} alt="header image" className="w-full object-cover" />
@@ -27,7 +27,7 @@ const BlogPostTeaser = (props: Props) => {
           </div>
         </div>
         <Markdown 
-          className="md:pl-4 md:pr-4 pl-2 pr-2 pt-4 prose prose-zinc400 max-w-full"
+          className="pl-2 pr-2 md:pl-4 md:pr-4 pt-4 prose prose-zinc400 max-w-full"
           components={
             {
               img: ({node,...props})=><img className="mx-auto h-auto md:max-w-[550px]" {...props}/>,
