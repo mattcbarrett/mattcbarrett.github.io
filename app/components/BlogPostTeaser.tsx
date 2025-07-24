@@ -51,7 +51,7 @@ const BlogPostTeaser = (props: Props) => {
           </div>
         </div>
       </div>
-      <Divider yMargin={8}/>
+      <Divider yMargin={'my-8'}/>
     </div>
   )
 }
