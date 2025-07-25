@@ -5,8 +5,7 @@ type Props = {
   post: Post
 }
 
-const BlogPost = (props: Props) => {
-  const { post } = props
+const BlogPost = ({ post }: Props) => {
   return (
     <>
       <div className="relative w-full">
