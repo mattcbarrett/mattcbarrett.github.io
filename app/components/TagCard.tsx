@@ -3,11 +3,10 @@ import { FaTags } from "react-icons/fa"
 
 type Props = {
   tags: string[]
-  tagsLower: string[]
   setIsOpen: (value: boolean) => void
 }
 
-const TagCard = ({ tags, tagsLower, setIsOpen }: Props) => {
+const TagCard = ({ tags, setIsOpen }: Props) => {
   const dedupedTags = [...new Set(tags)]
 
   const handleClick = () => {

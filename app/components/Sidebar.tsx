@@ -6,11 +6,9 @@ import { FaTimes, FaBars } from 'react-icons/fa'
 
 type Props = {
   tags: any
-  tagsLower: any
 }
 
-const Sidebar = (props: Props) => {
-  const { tags, tagsLower } = props
+const Sidebar = ({ tags }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleSidebar = () => {
@@ -34,7 +32,7 @@ const Sidebar = (props: Props) => {
       </div>
       <div className={`flex flex-col space-y-8 lg:sticky mx-4 mb-4 lg:ml-4 lg:mt-4 lg:top-0 lg:h-screen max-w-[300px] transition-transform duration-300 lg:block ${isOpen ? 'block' : 'hidden'} `}>
         <MenuCard setIsOpen={setIsOpen} />
-        <TagCard tags={tags} tagsLower={tagsLower} setIsOpen={setIsOpen} />
+        <TagCard tags={tags} setIsOpen={setIsOpen} />
       </div>
     </>
   )

@@ -4,13 +4,11 @@ interface Props {
   yMargin?: string
 }
 
-const Divider = (props: Props) => {
-  const { 
-    isVertical,
-    xMargin, 
-    yMargin
-  } = props
-
+const Divider = ({ 
+  isVertical,
+  xMargin, 
+  yMargin
+}: Props) => {
   return (
     <>
     {isVertical ?

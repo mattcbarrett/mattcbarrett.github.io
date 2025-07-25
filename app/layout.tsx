@@ -18,7 +18,6 @@ export default function RootLayout({
 }>) {
   const allPosts = getAllPosts()
   const tags = allPosts.map(post => post.tags).flat().sort()
-  const tagsLower = allPosts.map(post => post.tagsLower).flat().sort()
 
 
   return (
@@ -30,7 +29,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-zinc-900 text-zinc-400`}>
         <div className="lg:container lg:mx-auto">
           <div className="flex lg:flex-row lg:space-x-16 md:mx-8 flex-col justify-center">
-            <Sidebar tags={tags} tagsLower={tagsLower} />
+            <Sidebar tags={tags} />
             <div className="flex flex-col lg:max-w-[800px] lg:min-w-[800px] mt-4">
               {children}
             </div>
