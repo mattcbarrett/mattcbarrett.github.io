@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
+
   const allPosts = getAllPosts()
   const tags = allPosts.map(post => post.tags).flat().sort()
-
 
   return (
     <html lang="en">
