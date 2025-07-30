@@ -10,15 +10,12 @@ type Props = {
 }
 
 const posts = getAllPosts()
-
 const paginatedPosts = getPaginatedPosts()
 
-const pageMap = paginatedPosts.map((page, index) => ({
-  page: (index + 1).toString()
-}))
-
 export const generateStaticParams = async () => {
-  return pageMap
+  return paginatedPosts.map((page, index) => ({
+    page: (index + 1).toString()
+  }))
 }
 
 const page = () => {
