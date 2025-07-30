@@ -3,17 +3,15 @@ import { getAllPosts } from "@/app/shared/functions"
 import BlogPost from "@/app/posts/components/BlogPost"
 
 type Props = {
-  params: any
+  params: {
+    slug: string
+  }
 }
 
 export const generateStaticParams = async () => {
-  const posts = getAllPosts()
-
-  const map = posts.map((post) => ({
+  return getAllPosts().map((post) => ({
     slug: post.slug
   }))
-
-  return map
 }
 
 const page = ({ params }: Props) => {

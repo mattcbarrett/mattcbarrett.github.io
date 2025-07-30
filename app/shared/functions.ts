@@ -21,21 +21,22 @@ export const getPostFromFile = (filename: string) => {
 export const getAllPosts = () => {
   const files = getFilenames()
   const posts = files
-  .map((filename) => getPostFromFile(filename))
-  .map(post => {
-    post.tagsLower = post.tags.map(tag => tag.toLowerCase().replaceAll(" ", "-"))
-    return post
-  })
-  .sort(
-    (post1, post2) => {
-      let firstPostDate = (new Date(post1.date)).getTime()
-      let secondPostDate = (new Date(post2.date)).getTime()
-      return firstPostDate > secondPostDate ? -1 : 1
+    .map((filename) => getPostFromFile(filename))
+    .map(post => {
+      post.tagsLower = post.tags.map(tag => tag.toLowerCase().replaceAll(" ", "-"))
+      return post
     })
+    .sort(
+      (post1, post2) => {
+        let firstPostDate = (new Date(post1.date)).getTime()
+        let secondPostDate = (new Date(post2.date)).getTime()
+        return firstPostDate > secondPostDate ? -1 : 1
+      })
   return posts
 }
 
-export const paginatePosts = (posts: Post[]) => {
+export const getPaginatedPosts = () => {
+  const posts = getAllPosts()
   const pages: Post[][] = []
 
   for (let i = 0; i < posts.length; i += 5) {
@@ -43,4 +44,8 @@ export const paginatePosts = (posts: Post[]) => {
   }
 
   return pages
+}
+
+export const getAllTags = () => {
+  return getAllPosts().flatMap(post => post.tagsLower)
 }

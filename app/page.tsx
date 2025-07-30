@@ -1,10 +1,10 @@
 import BlogPostTeaser from "./components/BlogPostTeaser"
-import { getAllPosts, paginatePosts } from "@/app/shared/functions"
+import { getAllPosts, getPaginatedPosts } from "@/app/shared/functions"
 import Link from "next/link"
 
 export default function Home() {
   const posts = getAllPosts()
-  const paginatedPosts = paginatePosts(posts)
+  const paginatedPosts = getPaginatedPosts()
 
   return (
     <>

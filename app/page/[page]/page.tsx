@@ -1,5 +1,5 @@
 import React from 'react'
-import { getAllPosts, paginatePosts } from '@/app/shared/functions'
+import { getAllPosts, getPaginatedPosts } from '@/app/shared/functions'
 import BlogPostTeaser from '@/app/components/BlogPostTeaser'
 import Link from 'next/link'
 
@@ -11,7 +11,7 @@ type Props = {
 
 const posts = getAllPosts()
 
-const paginatedPosts = paginatePosts(posts)
+const paginatedPosts = getPaginatedPosts()
 
 const pageMap = paginatedPosts.map((page, index) => ({
   page: (index + 1).toString()
@@ -25,7 +25,7 @@ const page = () => {
   return (
     <>
       {posts.map((post, index) => (
-        <BlogPostTeaser post={post} key={`item-${index}`}/>
+        <BlogPostTeaser post={post} key={`${post.slug}`}/>
       ))}
       <div className="text-center space-x-2 mb-4">
         {paginatedPosts.map((page, index) => (
