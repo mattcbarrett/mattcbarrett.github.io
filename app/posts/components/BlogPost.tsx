@@ -1,5 +1,5 @@
 import { Post } from "@/app/shared/types";
-import Markdown from "react-markdown";
+import StyledMarkdown from "@/app/components/StyledMarkdown";
 
 type Props = {
   post: Post
@@ -20,20 +20,9 @@ const BlogPost = ({ post }: Props) => {
         </div>
       </div>
       <div className="md:pl-4 md:pr-4 pl-2 pr-2 mt-4">
-        <Markdown 
-          className="prose prose-zinc400 max-w-full"
-          components={
-            {
-              img: ({node,...props})=><img className="mx-auto h-auto md:max-w-[550px]" {...props}/>,
-              h1: ({node,...props})=><h1 className="md:text-xl text-base" {...props}/>,
-              h2: ({node,...props})=><h2 className="md:text-xl text-base" {...props}/>,
-              h3: ({node,...props})=><h3 className="md:text-xl text-base" {...props}/>,
-              a: ({node,...props})=><a className="hover:text-lime-400" {...props}/>
-            }
-          }
-        >
+        <StyledMarkdown className="prose prose-zinc400 max-w-full">
           {post.content}
-        </Markdown>
+        </StyledMarkdown>
       </div>
       <div className="mt-4 md:ml-4 ml-2 mb-4 text-sm italic">
         -{post.author}

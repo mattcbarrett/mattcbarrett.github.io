@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { getAllPosts } from "@/app/shared/functions"
-import BlogPost from "@/app/components/BlogPost"
+import BlogPost from "@/app/posts/components/BlogPost"
 
 type Props = {
   params: any
